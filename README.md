@@ -22,6 +22,162 @@ let's get started page
 enter 4 digit code screen
 
 
+## True Setup 
+
+Install VS code 
+Install Bash 
+Install Nodejs 
+Install react native  - npm install -g react-native-cli
+
+
+
+## react native 
+
+react-native @@ 0.73.0 -install in ubuntu 20.04
+npx react-native doctor 
+need to install and set JAVA_HOME in ubuntu 
+
+get nvm 
+nvm install 18 
+nvm use 18
+https://github.com/nvm-sh/nvm
+
+wsl --setdefault Ubuntu-20.04 # in powershell
+NODE 18+ non LTS requires Ubuntu 20.04
+REACT NATIVE REQUIRES NODE 18+ (using 20.10.0) # v14.17.3 (v18.19.0)
+
+Ubu
+
+get android studio - Android 13 (Tiramisu) SDK required 
+https://developer.android.com/studio/index.html
+
+settings for SDK manager:
+Android SDK Platform 33
+Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image
+
+
+Update environment variable
+
+configure AVD in android studio 
+
+step 1:
+Start Metro (JS build tool for React Native) - use npm start 
+step 2:
+start app in separate terminal 
+npm run android 
+
+run NPM start
+
+npx react-native@latest init ReactNativeCarChingProject
+
+cd into project directory and run 
+npx react-native run-android
+
+
+
+https://reactnative.dev/docs/environment-setup?guide=native&platform=android
+https://reactnative.dev/docs/running-on-device
+
+
+## react 
+
+Success! Created new-react-app at ~/car-ching/new-react-app
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd new-react-app
+  npm start
+
+
+
+## Errors 
+
+npm start not working, sh: 1: react-scripts: not found
+soln: remove package-lock.json, run 
+npm install react-scripts
+then 
+npm install 
+then 
+npm run start  (localhost:3000)
+
+
+## Security Vulnerabilities
+1 fixed with npm update @adobe/css-tools --depth 2
+1 fixed updated postcss >=8.4.31 - npm install postcss@8.4.31
+1 fixed updated nth-check >=2.0.1 - npm install nth-check@2.0.1
+
+npm install npm@latest -g
+
+$ npm audit 
+
+                       === npm audit security report ===                              
+                                                                                      
+# Run  npm update @adobe/css-tools --depth 2  to resolve 1 vulnerability
+┌───────────────┬──────────────────────────────────────────────────────────────┐      
+│ Moderate      │ @adobe/css-tools Improper Input Validation and Inefficient   │      
+│               │ Regular Expression Complexity                                │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Package       │ @adobe/css-tools                                             │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Dependency of │ @testing-library/jest-dom                                    │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Path          │ @testing-library/jest-dom > @adobe/css-tools                 │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ More info     │ https://github.com/advisories/GHSA-prr3-c3m5-p7q2            │      
+└───────────────┴──────────────────────────────────────────────────────────────┘      
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐      
+│                                Manual Review                                 │      
+│            Some vulnerabilities require your attention to resolve            │      
+│                                                                              │      
+│         Visit https://go.npm.me/audit-guide for additional guidance          │      
+└──────────────────────────────────────────────────────────────────────────────┘      
+┌───────────────┬──────────────────────────────────────────────────────────────┐      
+│ Moderate      │ PostCSS line return parsing error                            │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Package       │ postcss                                                      │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Patched in    │ >=8.4.31                                                     │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Dependency of │ react-scripts                                                │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Path          │ react-scripts > resolve-url-loader > postcss                 │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ More info     │ https://github.com/advisories/GHSA-7fh5-64p2-3v2j            │      
+└───────────────┴──────────────────────────────────────────────────────────────┘      
+┌───────────────┬──────────────────────────────────────────────────────────────┐      
+│ High          │ Inefficient Regular Expression Complexity in nth-check       │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Package       │ nth-check                                                    │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Patched in    │ >=2.0.1                                                      │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Dependency of │ react-scripts                                                │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ Path          │ react-scripts > @svgr/webpack > @svgr/plugin-svgo > svgo >   │      
+│               │ css-select > nth-check                                       │      
+├───────────────┼──────────────────────────────────────────────────────────────┤      
+│ More info     │ https://github.com/advisories/GHSA-rp65-9cf3-cjxr            │      
+└───────────────┴──────────────────────────────────────────────────────────────┘      
+found 3 vulnerabilities (2 moderate, 1 high) in 1542 scanned packages
+  run `npm audit fix` to fix 1 of them.
+  2 vulnerabilities require manual review. See the full report for details.
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
