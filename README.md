@@ -1,5 +1,25 @@
 # Car-ching
 
+https://www.figma.com/files/project/98076376/Team-project?fuid=1289659447150892822
+
+Expo - react framework
+
+npx create-expo-app
+
+#npx create-react-app test-react-app
+
+to run the app, cd in to directory and npm start
+
+src/app.js contains the application code
+
+store images in public
+
+
+
+screen to work on :
+
+let's get started page
+enter 4 digit code screen
 
 
 ## Getting started
