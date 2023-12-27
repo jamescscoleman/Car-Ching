@@ -1,118 +1,117 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React,{useState} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
+  Image, 
+  Text, 
   View,
+  StyleSheet,
+  Button
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+//npm install react-native-reanimated 
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
+//npm install react-native-circular-progress-indicator
+
+/*
+import { Svg, Path } from 'react-native-svg';
+import {arc} from "d3-shape"; // npm i --save-dev @types/d3-shape
+import { scaleLinear } from "d3-scale"; // npm i --save-dev @types/d3-scale
+*/ 
+
+//import { CircularProgressbar} from 'react-circular-progressbar';
+
+//import { StatusBar } from 'expo-status-bar'; // npm install expo-status-bar
+//import React, { useState } from 'react';
+//import { StyleSheet, Text, View } from 'react-native';
+import CircularProgress from 'react-native-circular-progress-indicator';
+
+
+function UserButton({text}){
+  return(
+    <Button alignSelf="stretch" title={text} color="green"/>
+  )
+
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
+// npm i react-circular-progressbar --save
+//variables
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  logo: {
+    width: 85,
+    height: 85,
+    top: -175,
+    right: -150
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  boldText: {
+    top: - 300,
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: 'black'
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  defText: {
+    top: - 290,
+    fontSize: 20,
   },
-  highlight: {
-    fontWeight: '700',
-  },
+  scoreText: {
+    top: - 120,
+    fontSize: 20,
+    color: 'green'
+  },  
+  button: {
+    color: 'black'
+  }
 });
 
+//component
+const App = () => {
+  const [value, setValue] = useState(0);
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <Image 
+        style={styles.logo} 
+        source={require('./img/car-ching-logo.png')} 
+        />
+
+      <CircularProgress
+        radius={80}
+        value={91}
+        textColor='#222'
+        fontSize={20}
+        valueSuffix={''} // '%' 
+        inActiveStrokeColor={'orange'}
+        activeStrokeColor={'#2ecc71'}
+        inActiveStrokeOpacity={0.2}
+        inActiveStrokeWidth={3}
+        duration={1000}
+        onAnimationComplete={() => setValue(50)}
+        dashedStrokeConfig={{
+          count: 100,
+          width: 4,
+        }}
+        strokeColorConfig={[
+          { color: 'red', value: 0 },
+          { color: 'orange', value: 60 },
+          { color: 'yellow', value: 80 },
+          { color: 'green', value: 90 },          
+        ]}
+      />      
+
+      <Text style ={styles.boldText}>Welcome back Ali!</Text>
+      <Text style ={styles.defText}>Your Drive Score</Text>
+
+      <UserButton  text = 'You' ></UserButton>
+      <UserButton text = 'Family' ></UserButton>
+
+      <Text style ={styles.scoreText}>Excellent</Text>
+
+    </View>
+  );
+};
 export default App;
