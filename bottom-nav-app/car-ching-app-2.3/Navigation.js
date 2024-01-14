@@ -5,6 +5,7 @@ import Feed from './screens/tabScreens/Feed'
 //import Notifications from './screens/tabScreens/Notifications'
 import Test from './Test'
 import Test2 from './Test2'
+import Board from './board'
 // 
 const Tab = createBottomTabNavigator();
 
@@ -14,6 +15,7 @@ function TabGroup() {
             <Tab.Screen name="Family (Move to middle)" component={Feed} />
             <Tab.Screen name="Dashboard" component={Test} />
             <Tab.Screen name="Insurance" component={Test2} />
+            <Tab.Screen name="Leaderboard" component={Board} />
 
         </Tab.Navigator>
     );

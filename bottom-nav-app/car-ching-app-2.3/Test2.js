@@ -95,8 +95,6 @@ const Test = () => {
       <UserButton text = 'Rapid Acceleration' ></UserButton>
 
 
-
-
       <Text style ={styles.scoreText}>Excellent</Text>
     </View>
   );

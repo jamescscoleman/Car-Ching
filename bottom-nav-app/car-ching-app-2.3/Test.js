@@ -49,6 +49,37 @@ function UserButton({text,driveScoreValue}){
 
 }
 
+function DriverScore({score}){
+    const [val, setValue] = useState(0);
+    return(
+        <CircularProgress
+        radius={110}
+        value={score}
+        textColor='#222'
+        fontSize={20}
+        valueSuffix={''} // '%' 
+        inActiveStrokeColor={'orange'}
+        activeStrokeColor={'#2ecc71'}
+        inActiveStrokeOpacity={0.2}
+        inActiveStrokeWidth={3}
+        duration={1000}
+        onAnimationComplete={() => setValue(50)}
+        dashedStrokeConfig={{
+        count: 100,
+        width: 4,
+        }}
+        strokeColorConfig={[
+        { color: 'red', value: 0 },
+        { color: 'orange', value: 60 },
+        { color: 'yellow', value: 80 },
+        { color: 'green', value: 90 },          
+        ]}
+    />
+    )
+  
+  }
+
+
 // npm i react-circular-progressbar --save
 //variables
 const styles = StyleSheet.create({
@@ -133,41 +164,15 @@ const Test = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-
-      <CircularProgress
-        radius={110}
-        value={82}
-        textColor='#222'
-        fontSize={20}
-        valueSuffix={''} // '%' 
-        inActiveStrokeColor={'orange'}
-        activeStrokeColor={'#2ecc71'}
-        inActiveStrokeOpacity={0.2}
-        inActiveStrokeWidth={3}
-        duration={1000}
-        onAnimationComplete={() => setValue(50)}
-        dashedStrokeConfig={{
-          count: 100,
-          width: 4,
-        }}
-        strokeColorConfig={[
-          { color: 'red', value: 0 },
-          { color: 'orange', value: 60 },
-          { color: 'yellow', value: 80 },
-          { color: 'green', value: 90 },          
-        ]}
-      />      
+      <DriverScore score="82"/>
+ 
 
       <Text style ={styles.boldText}>   Welcome back Ali!   </Text>
       <Text style ={styles.defText}>Your Drive Score</Text>
 
-
       <Text style ={styles.changeText}>     7 day Change      </Text>
 
-
       <Text>Drive Score Factors</Text> 
-
-
 
 
       <Text style ={styles.scoreText}>Excellent !</Text>
