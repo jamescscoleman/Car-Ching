@@ -7,6 +7,7 @@ Expo - react framework
 npx create-expo-app
 
 #npx create-react-app test-react-app
+npx create-react-app react-app-ts --template typescript 
 
 to run the app, cd in to directory and npm start
 
@@ -22,6 +23,67 @@ let's get started page
 enter 4 digit code screen
 
 
+
+## Read this 
+
+Docs: 
+https://legacy.reactjs.org/tutorial/tutorial.html
+https://reactnative.dev/docs/environment-setup?guide=native&platform=android
+https://reactnative.dev/docs/running-on-device
+https://reactnative.dev/docs/images
+https://dev.to/karthik_raja/a-simple-react-gauge-with-blob-1ddf
+https://www.npmjs.com/package/react-native-svg#installation
+https://www.npmjs.com/package/react-native-circular-progress-indicator
+https://github.com/federicoazzu/NavTest
+
+--official instructions--
+
+Requirements:
+Android Studio
+Android SDK 
+NodeJS 
+NPM
+Expo
+React Native 
+
+1) react-native init foo --template typescript 
+1) npx react-native start
+2) npm install react-native-reanimated 
+3) add react-native-reanimated/plugin to babel.config.js ie 
+ module.exports = {
+    presets: [
+      ... // don't add it here :)
+    ],
+    plugins: [
+      ...
+      'react-native-reanimated/plugin',
+    ],
+  };
+4) run with npx react-native start --reset-cache
+
+
+
+
+
+2) npm install 
+3) npm start
+2) npm i metro-config --save-dev
+2) npm i -g expo-cli # download expo
+
+
+1) npx react-native start
+created img folder for pictures 
+downloaded d3 js using yarn (npm install --global yarn)
+(yarn add d3)
+(yarn add d3
+cd ios && npx pod install
+yarn ios)
+downloaded react-native-svg using npm /yarn
+
+
+
+
+
 ## True Setup 
 
 Install VS code 
@@ -29,6 +91,9 @@ Install Bash
 Install Nodejs 
 Install react native  - npm install -g react-native-cli
 
+react-native init someApp --template typescript 
+cd someApp 
+npm install
 
 
 ## react native 
@@ -73,11 +138,53 @@ npx react-native@latest init ReactNativeCarChingProject
 cd into project directory and run 
 npx react-native run-android
 
-
+npx react-native start (run metro) ---- THIS WORKS 
+#Edit App.js or App.tsx 
+#press R twice to reload 
+# cmd or ctrl + m to open dev menu 
 
 https://reactnative.dev/docs/environment-setup?guide=native&platform=android
 https://reactnative.dev/docs/running-on-device
 
+
+## react app folder structure 
+my-app/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    assets/
+      images/
+      fonts/
+    components/
+      App.js
+      Header.js
+      Footer.js
+    pages/
+      Home.js
+      About.js
+    utils/
+      api.js
+      helpers.js
+    styles/
+      theme.ts
+      global.css
+      variables.css
+    App.css
+    App.js
+    index.css
+    index.js
+
+to import a component,
+
+npm install -g typescript 
+
+convert tsx to jsx: 
+
+tsc *.tsx --jsx preserve --outDir js
 
 ## react 
 

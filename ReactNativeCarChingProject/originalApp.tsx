@@ -1,6 +1,4 @@
-//import React,{useState} from 'react';
-import * as React from 'react';
-import {useState} from 'react';
+import React,{useState} from 'react';
 //
 import {
   Image, 
@@ -28,13 +26,6 @@ import { scaleLinear } from "d3-scale"; // npm i --save-dev @types/d3-scale
 //import { StyleSheet, Text, View } from 'react-native';
 import CircularProgress from 'react-native-circular-progress-indicator';
 
-// bottom tab 
-import HomeScreen from './HomeScreen';
-//import HomeScreen from './screens/HomeScreen';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-//npm i --save-dev @types/react-native-vector-icons
 function UserButton({text}){
   return(
     <Button alignSelf="stretch" title={text} color="green"/>
@@ -42,14 +33,16 @@ function UserButton({text}){
 
 }
 
+
+
 // npm i react-circular-progressbar --save
 //variables
 const styles = StyleSheet.create({
   logo: {
-    width: 40, //85
-    height: 40, //85
-    top: 3,
-    right: 0
+    width: 85,
+    height: 85,
+    top: -175,
+    right: -150
   },
   boldText: {
     top: - 300,
@@ -123,40 +116,6 @@ const App = () => {
 
       <Text style ={styles.scoreText}>Excellent</Text>
     </View>
-/*
-  return (
-
-    <NavigationContainer>      
-    <Tab.Navigator
-      initialRouteName={homeName}
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-          let rn = route.name;
-
-          if (rn === homeName) {
-            iconName = focused ? 'home' : 'home-outline';
-
-          } else if (rn === detailsName) {
-            iconName = focused ? 'list' : 'list-outline';
-
-          } else if (rn === settingsName) {
-            iconName = focused ? 'settings' : 'settings-outline';
-          }
-          
-          // You can return any component that you like here!
-          //return <Ionicons name={iconName} size={size} color={color} />;
-          return <Image style={styles.logo} source={require('./img/car-ching-logo.png')} />
-    
-        },
-      })}>
-
-      <Tab.Screen name={homeName} component={HomeScreen} />
-
-    </Tab.Navigator>
-  </NavigationContainer>
-
-  */
   );
 };
 export default App;
