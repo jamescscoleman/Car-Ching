@@ -34,3 +34,5 @@ add images to assets
 
 8) 
 npm install @firebase/auth
+
+9) yarn add expo metro-core

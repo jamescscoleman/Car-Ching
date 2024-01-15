@@ -6,6 +6,9 @@ import Feed from './screens/tabScreens/Feed'
 import Test from './Test'
 import Test2 from './Test2'
 import Board from './board'
+import NavigationInformationScreen from './DriverInformationScreen'
+import NavigationInformationScreen2 from './DriverInformationScreen2'
+import NavigationInformationScreen3 from './DriverInformationScreen3'
 // 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +19,9 @@ function TabGroup() {
             <Tab.Screen name="Dashboard" component={Test} />
             <Tab.Screen name="Insurance" component={Test2} />
             <Tab.Screen name="Leaderboard" component={Board} />
+            <Tab.Screen name="Insurance 1" component={NavigationInformationScreen} />
+            <Tab.Screen name="Insurance 2" component={NavigationInformationScreen2} />
+            <Tab.Screen name="Insurance 3" component={NavigationInformationScreen3} />
 
         </Tab.Navigator>
     );
