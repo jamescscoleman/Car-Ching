@@ -3,31 +3,28 @@ import { View, Text, TextInput, Button, StyleSheet, SafeAreaView } from 'react-n
 //import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 //import { faChevronLeft, faHome, faUsers, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
-const DriverInformationScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-      </View>
-      <Text style={styles.title}>Step 1/3</Text>
-      <Text style={styles.subtitle}>Driver Information</Text>
-
-      <TextInput style={styles.input} placeholder="First Name" />
-      <TextInput style={styles.input} placeholder="Last Name" />
-      <TextInput style={styles.input} placeholder="Sex" />
-      <TextInput style={styles.input} placeholder="Birthday" />
-      <TextInput style={styles.input} placeholder="Street Address" />
-      <TextInput style={styles.input} placeholder="Zip Code" />
-      <TextInput style={styles.input} placeholder="Gender" />
-      <TextInput style={styles.input} placeholder="Marital Status" />
 
 
-<Button title="Continue" onPress={() => {}} color="#27ae60" />
-
-{/* Navigation bar */}
-
-</SafeAreaView>
-);
+function DriverInformationScreen({names,step}){
+    const textInputs = names.map((name) => (
+        <TextInput key={name} style={styles.input} placeholder={name}/>          
+      ));
+    return (
+        <SafeAreaView style={styles.container}>
+          <View style={styles.header}>
+          </View>
+          <Text style={styles.title}>Step {step}/3</Text>
+          <Text style={styles.subtitle}>Driver Information</Text>
+          {textInputs}    
+    
+    <Button title="Continue" onPress={() => {}} color="#27ae60" />
+    
+    {/* Navigation bar */}
+    
+    </SafeAreaView>
+    );
 };
+
 
 const styles = StyleSheet.create({
 container: {
