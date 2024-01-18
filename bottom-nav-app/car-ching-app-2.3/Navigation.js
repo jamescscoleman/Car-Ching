@@ -4,9 +4,10 @@ import Feed from './screens/tabScreens/Feed'
 //import Settings from './screens/tabScreens/Settings'
 //import Notifications from './screens/tabScreens/Notifications'
 import Test from './Test'
-import Test2 from './Test2'
 import Board from './board'
 import NavigationInformationScreen from './DriverInformationScreen'
+import ProfileScreen1 from './ps1'
+import ProfileScreen2 from './ps2'
 // 
 const Tab = createBottomTabNavigator();
 
@@ -21,11 +22,9 @@ function TabGroup() {
 
     return(
         <Tab.Navigator>
-            <Tab.Screen name="Family (Move to middle)" component={Feed} />
             <Tab.Screen name="Dashboard" component={Test} />
-            <Tab.Screen name="Insurance" component={Test2} />
             <Tab.Screen name="Leaderboard" component={Board} />
-            
+            <Tab.Screen name="User Profile" component={ProfileScreen2} />
             <Tab.Screen name="Insurance 1"  component= {Screen1} />
             <Tab.Screen name="Insurance 2" component={Screen2} />
             <Tab.Screen name="Insurance 3" component={Screen3} />

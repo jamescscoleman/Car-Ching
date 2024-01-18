@@ -3,8 +3,6 @@ import { View, Text, TextInput, Button, StyleSheet, SafeAreaView } from 'react-n
 //import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 //import { faChevronLeft, faHome, faUsers, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
-
-
 function DriverInformationScreen({names,step}){
     const textInputs = names.map((name) => (
         <TextInput key={name} style={styles.input} placeholder={name}/>          
