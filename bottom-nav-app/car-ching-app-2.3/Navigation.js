@@ -6,8 +6,7 @@ import Feed from './screens/tabScreens/Feed'
 import Test from './Test'
 import Board from './board'
 import NavigationInformationScreen from './DriverInformationScreen'
-import ProfileScreen1 from './ps1'
-import ProfileScreen2 from './ps2'
+import ProfileScreen2 from './ProfileScreen'
 // 
 const Tab = createBottomTabNavigator();
 

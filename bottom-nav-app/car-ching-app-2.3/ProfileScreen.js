@@ -23,11 +23,14 @@ const ProfileScreen2 = () => {
       <ScrollView style={styles.content}>
         <View style={styles.section}>
           <ProfileItem name="Account"/>
+          <Text>{"\n"}</Text>
           <ProfileItem name="Settings"/>
           <ProfileItem name="Help"/>
           <ProfileItem name="FAQ"/>
+          <Text>{"\n"}</Text>
           <ProfileItem name="Refer"/>
           <ProfileItem name="Add to Family"/>
+          <Text>{"\n"}</Text>
           <ProfileItem name="Logout"/>
 
 
@@ -55,6 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 16,
+
   },
   title: {
     fontSize: 20,
@@ -77,6 +81,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 1, // Creates a single line separator effect
+    borderRadius: 20,
   },
   itemText: {
     fontSize: 16,
