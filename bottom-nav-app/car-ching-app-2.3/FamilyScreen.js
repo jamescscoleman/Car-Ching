@@ -83,7 +83,7 @@ function DriverScore({score}){
     const [val, setValue] = useState(0);
     return(
         <CircularProgress
-        radius={90}
+        radius={130}
         value={score}
         textColor='#222'
         fontSize={20}
@@ -109,7 +109,6 @@ function DriverScore({score}){
  )
 }
 
-
 function LeaderBoardScreen({navigation}) {
  
   const familyData = [
@@ -125,7 +124,7 @@ function LeaderBoardScreen({navigation}) {
       <Text style={styles.rank}>{index + 1}</Text>
             <Image
             source={require("./assets/car-ching-logo.png")}
-            style={{ width: 60, height: 60, borderRadius: 18, marginLeft: 15 }}
+            style={{ width: 60, height: 50, borderRadius: 15, marginLeft: 15 }}
           />
 
       <Text style={styles.name}>{item.name}</Text>
@@ -148,6 +147,8 @@ function LeaderBoardScreen({navigation}) {
       </View>
         <Text> {"\n"} </Text>
         <Text> {"\n"} </Text>
+  
+        <Text> {"\n"} </Text>
       <View style={styles.scoreboard}>
         <Text style={styles.familyAverage}>Family Average</Text>
         <DriverScore score="91"/>
@@ -155,8 +156,11 @@ function LeaderBoardScreen({navigation}) {
        <Text style={styles.averageScore}>91</Text>
        */} 
       </View>
-      <Text> {"\n"} {"\n"} </Text>
-      <FlatList
+      <Text> {"\n"} </Text>
+ 
+      <Text> {"\n"} </Text>
+       <Text> {"\n"} </Text>
+       <FlatList
         data={familyData}
         renderItem={renderItem}
         keyExtractor={(item) => item.name}
