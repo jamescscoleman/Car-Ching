@@ -36,3 +36,26 @@ add images to assets
 npm install @firebase/auth
 
 9) yarn add expo metro-core
+
+npm install react-native-circular-progress-indicator
+npm install react-native
+
+npm i --save react-native-svg # **
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/react-native-fontawesome
+
+npm install @react-navigation/native-stack
+
+npm install @react-navigation/native
+
+npm install --save react-native-vector-icons
+
+
+npx expo install --npm 
+
+npx expo install --fix
+
+
+https://ionic.io/ionicons/v4/cheatsheet.html
+https://fontawesome.com/v4/cheatsheet/

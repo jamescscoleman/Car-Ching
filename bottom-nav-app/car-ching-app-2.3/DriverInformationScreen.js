@@ -3,7 +3,10 @@ import { View, Text, TextInput, Button, StyleSheet, SafeAreaView } from 'react-n
 //import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 //import { faChevronLeft, faHome, faUsers, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
-function DriverInformationScreen({names,step}){
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+function DriverInformationScreen({navigation,names,step}){
     const textInputs = names.map((name) => (
         <TextInput key={name} style={styles.input} placeholder={name}/>          
       ));
@@ -15,7 +18,7 @@ function DriverInformationScreen({names,step}){
           <Text style={styles.subtitle}>Driver Information</Text>
           {textInputs}    
     
-    <Button title="Continue" onPress={() => {}} color="#27ae60" />
+    <Button title="Continue" onPress={() => navigation.navigate('Insurance2')} color="#27ae60" />
     
     {/* Navigation bar */}
     

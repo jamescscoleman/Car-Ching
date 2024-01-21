@@ -117,7 +117,6 @@ import {
 <Text>                                                Family Average                                                                                                       </Text>   
         <ButtonRow/>
       <DriverScore score="91"/>
-
         <LeaderBoardPerson rank="1" name="Jane" score="94"/>
         <LeaderBoardPerson rank="2" name="Chad" score="93"/>
         <LeaderBoardPerson rank="3" name="Don" score="86"/>
