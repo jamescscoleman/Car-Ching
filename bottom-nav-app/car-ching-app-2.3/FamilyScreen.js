@@ -117,7 +117,6 @@ function LeaderBoardScreen({navigation}) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <FontAwesome.Button name="bars" backgroundColor="green" textColor="black" onPress={() => navigation.navigate('User Profile')}>
-        Profile
         </FontAwesome.Button>
         <Text style={styles.headerTitle}>Your Family Score</Text>
       </View>

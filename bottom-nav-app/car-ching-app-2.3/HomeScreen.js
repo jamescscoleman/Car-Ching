@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Modal, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, Modal, TouchableOpacity, StyleSheet, ScrollView  } from 'react-native';
 
 
 import CircularProgress from 'react-native-circular-progress-indicator';
@@ -94,20 +94,20 @@ const HomeScreen = () => {
     const [val, setValue] = useState(0);
     return(
         <CircularProgress
-          radius={155}
+          radius={120}
           value={score}
           textColor='#222'
-          fontSize={20}
+          fontSize={40}
           valueSuffix={''} // '%' 
           inActiveStrokeColor={'orange'}
           activeStrokeColor={'#2ecc71'}
           inActiveStrokeOpacity={0.2}
-          inActiveStrokeWidth={3}
+          inActiveStrokeWidth={5}
           duration={800}
           onAnimationComplete={() => setValue(50)}
           dashedStrokeConfig={{
           count: 100,
-          width: 4,
+          width: 5,
           style: styles.progress,
         }}
         strokeColorConfig={[
@@ -124,14 +124,16 @@ const t2 = "Tapping, Texting, or swiping continuously while driving";
 const t3 = "Continuously driving far above the speed limit";
 const t4 = "Turning a corner too fast";
 const t5 = "Rapid accelerating rather than gradually";
+const s1 = "You rank among the top 14% of drivers";
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
+
 
       <Text> {"\n"} {"\n"} {"\n"} {"\n"}{"\n"}{"\n"}{"\n"}{"\n"} </Text>
 
       <View style={styles.scoreboard}>
-      <Text style={styles.familyAverage}>Welcome Ali</Text>
+      <Text style={styles.familyAverage}>Welcome James</Text>
         <Text style={styles.familyAverage}>Your Driver Score{"\n"}</Text>
         <DriverScore score="82"/>
       </View>
@@ -158,7 +160,8 @@ const t5 = "Rapid accelerating rather than gradually";
       {/* Existing Home Screen content */}
 
 
-    </SafeAreaView>
+    </ScrollView>  
+
   );
 };
 
@@ -168,13 +171,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 22,
+    marginTop: 0,
   },
   modalView: {
-    margin: 20,
+    margin: 5,
     backgroundColor: 'white',
     borderRadius: 20,
-    padding: 35,
+    padding: 5,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -187,48 +190,62 @@ const styles = StyleSheet.create({
   },
   harshBrakingButton: {
     // styles for the button that opens the modal
+    width: 10,
   },
   closeButton: {
+    marginLeft: 225,
+    marginTop:10,
+    marginBottom: 10,
+    //fontWeight: 'bold',
+    //fontSize: 80,
     // styles for the close button inside the modal
   },
   modalText: {
-    marginBottom: 15,
+    marginBottom: 10,
+    marginTop: 10,
     textAlign: 'center',
     // other text styles
+    
   },
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: 'white',
+    //padding: 0,
+    paddingVertical: 0,
+    paddingHorizontal: 5,
+    backgroundColor: 'beige',
   },
-  header: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
+  //header: {
+    //fontSize: 80,
+    //fontWeight: 'bold',
+    //marginBottom: 0,
+  //},
   buttonGroup: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 10,
+    marginBottom: 5,
   },
   button: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 1,
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
+    borderWidth: 2,
+    borderRadius: 15,
+    paddingVertical: 0,
+    paddingHorizontal: 0,
     flex: 1,
     marginHorizontal: 5,
+    marginVertical: 2,
+    marginRight: 0,
+    marginLeft: 0,
   },
   statusIndicator: {
     width: 20,
-    height: 20,
-    borderRadius: 10,
+    height: 58,
+    borderRadius: 8,
     marginRight: 10,
   },
   buttonText: {
     fontSize: 16,
+    
   },
   scoreboard: {
     flex: 1,
@@ -236,13 +253,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // styles for your scoreboard arc and family average
   },
-  familyAverage: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
+  //familyAverage: {
+    //fontSize: 18,
+    //fontWeight: 'bold',
+    //textAlign: 'center',
+  //s},
   textStyle: {
-    color: 'green'
+    fontSize:20,
+    color: 'green',
   }
   // ... add other styles for the modal content
 });
