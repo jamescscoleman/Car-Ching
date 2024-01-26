@@ -42,28 +42,14 @@ function ProfileScreen({navigation}){
           <ProfileItem name="Add to Family"/>
           <Text>{"\n"}</Text>
           <ProfileItem name="Logout"/>
-
-
         </View>
-          {/* ... other items /}
-        </View>
-        <View style={styles.section}>
-          {/ ... other sections /}
-        </View>
-      </ScrollView>
-      <View style={styles.footer}>
-        {/ ... bottom navigation items */}
-
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-
 function UserButton({text,driveScoreValue}){
-        
-    var driveScoreColor = "green"
-    
+    var driveScoreColor = "green"    
     if (driveScoreValue >= 90){
       driveScoreColor = "green"    
     } else if (driveScoreValue >= 80){
@@ -75,42 +61,40 @@ function UserButton({text,driveScoreValue}){
     }
     return(
       <Button alignSelf="stretch" title={text} color={driveScoreColor}/>
-    )
-  
+    )  
   }
 
 function DriverScore({score}){
     const [val, setValue] = useState(0);
     return(
         <CircularProgress
-        radius={130}
-        value={score}
-        textColor='#222'
-        fontSize={20}
-        valueSuffix={''} // '%' 
-        inActiveStrokeColor={'orange'}
-        activeStrokeColor={'#2ecc71'}
-        inActiveStrokeOpacity={0.2}
-        inActiveStrokeWidth={3}
-        duration={800}
-        onAnimationComplete={() => setValue(50)}
-        dashedStrokeConfig={{
-        count: 100,
-        width: 4,
-        style: styles.progress,
+          radius={130}
+          value={score}
+          textColor='#222'
+          fontSize={20}
+          valueSuffix={''} // '%' 
+          inActiveStrokeColor={'orange'}
+          activeStrokeColor={'#2ecc71'}
+          inActiveStrokeOpacity={0.2}
+          inActiveStrokeWidth={3}
+          duration={800}
+          onAnimationComplete={() => setValue(50)}
+          dashedStrokeConfig={{
+          count: 100,
+          width: 4,
+          style: styles.progress,
         }}
         strokeColorConfig={[
-        { color: 'red', value: 0 },
-        { color: 'orange', value: 60 },
-        { color: 'yellow', value: 80 },
-        { color: 'green', value: 90 },          
+          { color: 'red', value: 0 },
+          { color: 'orange', value: 60 },
+          { color: 'yellow', value: 80 },
+          { color: 'green', value: 90 },          
         ]}
     />
- )
+  )
 }
 
 function LeaderBoardScreen({navigation}) {
- 
   const familyData = [
     { name: 'Jane', score: 94, trend: 'up' },
     { name: 'Chris', score: 93, trend: 'down' },
@@ -122,55 +106,35 @@ function LeaderBoardScreen({navigation}) {
   const renderItem = ({ item, index }) => (
     <View style={styles.listItem}>
       <Text style={styles.rank}>{index + 1}</Text>
-            <Image
-            source={require("./assets/car-ching-logo.png")}
-            style={{ width: 60, height: 50, borderRadius: 15, marginLeft: 15 }}
-          />
-
+      <Image source={require("./assets/car-ching-logo.png")} style={{ width: 60, height: 50, borderRadius: 15, marginLeft: 15 }}/>
       <Text style={styles.name}>{item.name}</Text>
       <Text style={styles.score}>{item.score}</Text>
-      <FontAwesomeIcon
-        icon={item.trend === 'up' ? faChevronUp : faChevronDown}
-        size={16}
-        color={item.trend === 'up' ? 'green' : 'red'}
-      />
+      <FontAwesomeIcon icon={item.trend === 'up' ? faChevronUp : faChevronDown} size={16} color={item.trend === 'up' ? 'green' : 'red'}/>
     </View>
   );
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-      <FontAwesome.Button name="bars" backgroundColor="green" textColor="black" onPress={() => navigation.navigate('User Profile')} >
-      Profile
-      </FontAwesome.Button>
-        <Text style={styles.headerTitle}>Your Family Leaderboard</Text>
+        <FontAwesome.Button name="bars" backgroundColor="green" textColor="black" onPress={() => navigation.navigate('User Profile')}>
+        Profile
+        </FontAwesome.Button>
+        <Text style={styles.headerTitle}>Your Family Score</Text>
       </View>
-        <Text> {"\n"} </Text>
-        <Text> {"\n"} </Text>
-  
-        <Text> {"\n"} </Text>
+      <Text> {"\n"} </Text>
+      <Text> {"\n"} </Text>  
+      <Text> {"\n"} </Text>
       <View style={styles.scoreboard}>
         <Text style={styles.familyAverage}>Family Average</Text>
         <DriverScore score="91"/>
-       {/* 
-       <Text style={styles.averageScore}>91</Text>
-       */} 
       </View>
+      <Text> {"\n"} </Text> 
       <Text> {"\n"} </Text>
- 
       <Text> {"\n"} </Text>
-       <Text> {"\n"} </Text>
-       <FlatList
-        data={familyData}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.name}
-      />
-
+      <FlatList data={familyData} renderItem={renderItem} keyExtractor={(item) => item.name}/>
     </SafeAreaView>
   );
 };
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -192,7 +156,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // styles for your scoreboard arc and family average
   },
   familyAverage: {
     fontSize: 18,
@@ -285,7 +248,6 @@ const styles = StyleSheet.create({
   // ... Add other styles as needed
 });
 
-
 const Stack = createNativeStackNavigator();
 function FamilyScreen() {
 return (
@@ -293,10 +255,8 @@ return (
         <Stack.Navigator initialRouteName="Leaderboard">
         <Stack.Screen name="Leaderboard" component={LeaderBoardScreen} />
         <Stack.Screen name="User Profile" component={ProfileScreen} />
-
         </Stack.Navigator>
     </NavigationContainer>
     );
-}
-
+};
 export default FamilyScreen;
